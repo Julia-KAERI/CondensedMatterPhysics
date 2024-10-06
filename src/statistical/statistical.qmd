@@ -1,0 +1,9 @@
+---
+title: "열 및 통계물리학"
+number-sections: true
+number-depth : 3
+crossref:
+  chapters: true
+---
+
+열 및 통계물리학에 대해 서술한다.

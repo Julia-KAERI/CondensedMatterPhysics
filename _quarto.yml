@@ -9,7 +9,7 @@ book:
 
   chapters:
     - index.qmd
-    - part : src/part1/part1.qmd
+    - part : src/statistical/statistical.qmd
       chapters :
         - src/statistical/statistical_01.qmd
 

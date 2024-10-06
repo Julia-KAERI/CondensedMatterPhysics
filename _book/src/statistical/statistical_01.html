@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../index.html" rel="prev">
+<link href="../../src/statistical/statistical.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -68,6 +68,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -80,7 +109,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/statistical/statistical_01.html">src/part1/part1.qmd</a></li><li class="breadcrumb-item"><a href="../../src/statistical/statistical_01.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">입자계</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/statistical/statistical.html">열 및 통계물리학</a></li><li class="breadcrumb-item"><a href="../../src/statistical/statistical_01.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">입자계</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -113,8 +142,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">src/part1/part1.qmd</span></a>
+            <a href="../../src/statistical/statistical.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">열 및 통계물리학</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="토글 섹션">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -133,13 +162,20 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">목차</h2>
+   
+  <ul>
+  <li><a href="#비유로-본-기본-개념" id="toc-비유로-본-기본-개념" class="nav-link active" data-scroll-target="#비유로-본-기본-개념">비유로 본 기본 개념</a></li>
+  <li><a href="#계의-상태" id="toc-계의-상태" class="nav-link" data-scroll-target="#계의-상태"><span class="header-section-number">1.1</span> 계의 상태</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/statistical/statistical_01.html">src/part1/part1.qmd</a></li><li class="breadcrumb-item"><a href="../../src/statistical/statistical_01.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">입자계</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/statistical/statistical.html">열 및 통계물리학</a></li><li class="breadcrumb-item"><a href="../../src/statistical/statistical_01.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">입자계</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">입자계</span></h1>
 </div>
@@ -158,8 +194,31 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p><br></p>
+<section id="비유로-본-기본-개념" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="비유로-본-기본-개념">비유로 본 기본 개념</h2>
+<p>통계물리학은 아보가드로 수 <span class="math inline">\(N_A \approx 6\times 10^{26}\)</span> 정도의 입자 개수로 이루어진 시스템을 주로 다룬다. 이런 다수의 입자로 이루어진 시스템을 다루기 위해서 통계적인 방법을 사용하게 되는데, 통계 역학의 주요 개념들을 짚고 너어가기로 하자. 비유적으로 설명하기 위해 컵에 주사위 10개를 담아 테이블 위에 던지는 실험을 생각해 보기로 하자.</p>
+<p>(<span class="math inline">\(1\)</span>) 계의 상태의 특정 : 각각의 실험의 결과를 서술하는 상세한 방법론이 필요하다. 10 개의 주사위 실험의 경우 각각에 대해 어떤 면이 위를 향하는지에 대한 특정이 필요하다.</p>
+<p>(<span class="math inline">\(2\)</span>) 통계적 앙상블 : 이 실험은 본직적으로 결정론적지만 우리는 각각의 주사위에 대한 초기조건을 알고 있지 않은 경우가 많다. 이 경우 확률을 이용하게 된다. 즉 우리는 하나의 실험이 아니라 유사한 조건에서 여러번 수행된 10개의 주사위 도박의 앙상블(emssmble) 을 생각 할 수 있다. 또한 각각의 개별 실험의 결과는 다르지만 각각의 개별 실험 결과에 대한 확률을 생각 할 수 있다.</p>
+<p>(<span class="math inline">\(3\)</span>) 선험적 확률에 대한 기본 공리 : 이 실험의 경우 주사위의 6개의 면 각각이 위를 향할 확률이 모두 같다는 가정 혹은 공리가 필요하다. 이 공리는 선험적이며, 실험에 의해 그 확실성을 보장받을 수 있다.</p>
+<p>(<span class="math inline">\(4\)</span>) 확률 계산 : 이 기본 공리를 인정한다면 확률 이론을 통해 이 주사위 던지기 실험의 결과에 대한 이론적 계산이 가능해진다.</p>
+<p><br></p>
+</section>
+<section id="계의-상태" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="계의-상태"><span class="header-section-number">1.1</span> 계의 상태</h2>
+<p>어떤 입자계라도 양자 역학의 법칙을 통해 기술 될 수 있다. 특히 계 전체를 기술하는 파동함수 <span class="math inline">\(\psi (q_1,\ldots,\,q_f)\)</span> 를 생각 할 수 있으며 파동함수의 독립변수가 <span class="math inline">\(f\)</span> 개 일 때 이 시스템의 <strong>자유도 (degree of freedom)</strong> 를 <span class="math inline">\(f\)</span> 이라고 한다. 즉 시스템의 상태는 <span class="math inline">\(f\)</span> 개의 값으로 특정된다. 또한 어떤 특정 시간 <span class="math inline">\(t\)</span> 에 시스템의 상태가 특정된다면, 과거와 미래 어떤 시간에 대해서도 시스템의 상태를 알 수 있다.</p>
+<p><br></p>
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+<div id="exm-part1_system_of_particles_1" class="theorem example">
+<p><span class="theorem-title"><strong>예제 1.1</strong></span> (<span class="math inline">\(1\)</span>) 위치가 고정된 단 하나의 입자로 이루어진 시스템을 생각하자. 이 입자의 스핀각운동량 <span class="math inline">\(S=\frac{1}{2}\hbar\)</span> 이다. 양자역학은 특정 방향에 대해 <span class="math inline">\(m= \pm \frac{1}{2}\)</span> 의 값을 가진다는 것을 알려준다.</p>
+<p>(<span class="math inline">\(2\)</span>) 이제 하나가 아닌 <span class="math inline">\(N\)</span> 개의 동일한 <span class="math inline">\(S=\frac{1}{2}\hbar\)</span> 입자로 이루어진 시스템을 생각하자. 역시 위치는 고정되어 있다고 하자. <span class="math inline">\(i\)</span> 번째 입자는 양자수 <span class="math inline">\(m_i=\pm \frac{1}{2}\hbar\)</span> 를 가질 수 있으므로 <span class="math inline">\(m_1,\,m_2,\ldots, m_N\)</span> 에 의해 시스템이 특정된다.</p>
+<p>(<span class="math inline">\(3\)</span>) 동일한 1차원 단순조화진동자 <span class="math inline">\(N\)</span> 개 로 이루어진 시스템을 생각하자. 이 때 위치 좌표를 <span class="math inline">\(x\)</span> 라고 하자. 1차원 조화진동자는 에너지 양자수 <span class="math inline">\(n\)</span> 에 의해 결정된다는 것을 알고 있다. <span class="math inline">\(i\)</span> 번째 입자의 에너지 양자수를 <span class="math inline">\(n_i\)</span> 라고 하면 <span class="math inline">\(n_1,\,n_2,\ldots,\, n_N\)</span> 에 의해 시스템이 특정된다. 우리는 <span class="math inline">\(n_i\)</span> 가 <span class="math inline">\(0\)</span> 혹은 양의 정수의 값을 가진다는 것을 안다.</p>
+<p>(<span class="math inline">\(4\)</span>) 서로 약하게 상호작용하는 <span class="math inline">\(N\)</span> 개의 1차원 조화진동자로 이루어진 시스템을 생각하자.</p>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -584,8 +643,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../index.html" class="pagination-link" aria-label="Preface">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      <a href="../../src/statistical/statistical.html" class="pagination-link" aria-label="열 및 통계물리학">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">열 및 통계물리학</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
